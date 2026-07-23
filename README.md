@@ -13,7 +13,7 @@
 | 工程帧头/尾 | `F4F3F2F1` / `F8F7F6F5` | 相同 |
 | 命令帧头/尾 | `FDFCFBFA` / `04030201` | 相同 |
 | 能量/门限单位 | 原始值 | **dB**（`dB = 10·log10(raw)`） |
-| 最大距离参数 | 按距离门 | **0.1m 单位**（0.7~10m） |
+| 最大距离参数 | 按距离门 | **0.1m 单位**（0.7\~10m） |
 
 因协议差异较大，本组件独立实现，不能直接复用官方 `ld2410`。
 
@@ -66,9 +66,9 @@ binary_sensor:
 - **binary_sensor**：`has_target`（有人）、`moving_target`（运动）、`still_target`（静止）
 - **sensor**：`detection_distance`（cm）；`g0..g15_move_energy`、`g0..g15_still_energy`（dB，仅工程模式）
 - **text_sensor**：`version`（固件版本）、`sn`（序列号）
-- **number**：`max_distance`（0.7~10m）、`timeout`（0~65535s）、
+- **number**：`max_distance`（0.7\~10m）、`timeout`（0\~65535s）、
   `g0..g15_move_threshold`、`g0..g15_still_threshold`（dB）、
-  `trigger_coefficient` / `hold_coefficient` / `micro_coefficient`（1.0~20.0，用于自动门限生成）
+  `trigger_coefficient` / `hold_coefficient` / `micro_coefficient`（1.0\~20.0，用于自动门限生成）
 - **button**：`query_params`（读取参数）、`generate_threshold`（自动门限生成）、`auto_gain`（上电自动增益）
 - **switch**：`engineering_mode`（工程模式，开启后输出各距离门能量值）
 
