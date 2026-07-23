@@ -1,7 +1,7 @@
 # ESPHome 组件：HLK-LD2410D
 
 第三方 ESPHome 外部组件，用于海凌科 **HLK-LD2410D** 24GHz 静止人体存在传感器。
-协议参考官方手册 V1.02 编写，用法风格参考官方 `ld2410` / `ld2410b/v` 组件。
+协议参考官方手册 V1.02 编写，用法风格参考官方 `ld2410` / `ld2410b/c` 组件。
 
 ## 与 LD2410 / LD2410B 的主要差异
 
@@ -19,7 +19,17 @@
 
 ## 安装
 
-将 `components/` 目录放到配置同级，然后：
+推荐直接从 GitHub 仓库引用（无需本地拷贝）：
+
+```yaml
+external_components:
+  - source:
+      type: git
+      url: https://github.com/2107596808/esphome-ld2410d
+    components: [ld2410d]
+```
+
+也可以把 `components/` 目录放到配置同级，使用本地引用：
 
 ```yaml
 external_components:
@@ -28,8 +38,6 @@ external_components:
       path: components
     components: [ld2410d]
 ```
-
-也可以直接从 git 仓库引用（`type: git`）。
 
 ## 快速开始
 
