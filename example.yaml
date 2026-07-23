@@ -55,15 +55,71 @@ sensor:
     ld2410d_id: radar
     detection_distance:
       name: "Detection Distance"
-    # Per-gate energies are only populated in engineering mode.
+    # Per-gate energies are only populated in engineering mode (g0..g15).
     g0_move_energy:
       name: "Gate 0 Move Energy"
     g1_move_energy:
       name: "Gate 1 Move Energy"
+    g2_move_energy:
+      name: "Gate 2 Move Energy"
+    g3_move_energy:
+      name: "Gate 3 Move Energy"
+    g4_move_energy:
+      name: "Gate 4 Move Energy"
+    g5_move_energy:
+      name: "Gate 5 Move Energy"
+    g6_move_energy:
+      name: "Gate 6 Move Energy"
+    g7_move_energy:
+      name: "Gate 7 Move Energy"
+    g8_move_energy:
+      name: "Gate 8 Move Energy"
+    g9_move_energy:
+      name: "Gate 9 Move Energy"
+    g10_move_energy:
+      name: "Gate 10 Move Energy"
+    g11_move_energy:
+      name: "Gate 11 Move Energy"
+    g12_move_energy:
+      name: "Gate 12 Move Energy"
+    g13_move_energy:
+      name: "Gate 13 Move Energy"
+    g14_move_energy:
+      name: "Gate 14 Move Energy"
+    g15_move_energy:
+      name: "Gate 15 Move Energy"
     g0_still_energy:
       name: "Gate 0 Still Energy"
     g1_still_energy:
       name: "Gate 1 Still Energy"
+    g2_still_energy:
+      name: "Gate 2 Still Energy"
+    g3_still_energy:
+      name: "Gate 3 Still Energy"
+    g4_still_energy:
+      name: "Gate 4 Still Energy"
+    g5_still_energy:
+      name: "Gate 5 Still Energy"
+    g6_still_energy:
+      name: "Gate 6 Still Energy"
+    g7_still_energy:
+      name: "Gate 7 Still Energy"
+    g8_still_energy:
+      name: "Gate 8 Still Energy"
+    g9_still_energy:
+      name: "Gate 9 Still Energy"
+    g10_still_energy:
+      name: "Gate 10 Still Energy"
+    g11_still_energy:
+      name: "Gate 11 Still Energy"
+    g12_still_energy:
+      name: "Gate 12 Still Energy"
+    g13_still_energy:
+      name: "Gate 13 Still Energy"
+    g14_still_energy:
+      name: "Gate 14 Still Energy"
+    g15_still_energy:
+      name: "Gate 15 Still Energy"
 
 text_sensor:
   - platform: ld2410d
@@ -88,8 +144,68 @@ number:
       name: "Micro Coefficient"
     g0_move_threshold:
       name: "Gate 0 Move Threshold"
+    g1_move_threshold:
+      name: "Gate 1 Move Threshold"
+    g2_move_threshold:
+      name: "Gate 2 Move Threshold"
+    g3_move_threshold:
+      name: "Gate 3 Move Threshold"
+    g4_move_threshold:
+      name: "Gate 4 Move Threshold"
+    g5_move_threshold:
+      name: "Gate 5 Move Threshold"
+    g6_move_threshold:
+      name: "Gate 6 Move Threshold"
+    g7_move_threshold:
+      name: "Gate 7 Move Threshold"
+    g8_move_threshold:
+      name: "Gate 8 Move Threshold"
+    g9_move_threshold:
+      name: "Gate 9 Move Threshold"
+    g10_move_threshold:
+      name: "Gate 10 Move Threshold"
+    g11_move_threshold:
+      name: "Gate 11 Move Threshold"
+    g12_move_threshold:
+      name: "Gate 12 Move Threshold"
+    g13_move_threshold:
+      name: "Gate 13 Move Threshold"
+    g14_move_threshold:
+      name: "Gate 14 Move Threshold"
+    g15_move_threshold:
+      name: "Gate 15 Move Threshold"
     g0_still_threshold:
       name: "Gate 0 Still Threshold"
+    g1_still_threshold:
+      name: "Gate 1 Still Threshold"
+    g2_still_threshold:
+      name: "Gate 2 Still Threshold"
+    g3_still_threshold:
+      name: "Gate 3 Still Threshold"
+    g4_still_threshold:
+      name: "Gate 4 Still Threshold"
+    g5_still_threshold:
+      name: "Gate 5 Still Threshold"
+    g6_still_threshold:
+      name: "Gate 6 Still Threshold"
+    g7_still_threshold:
+      name: "Gate 7 Still Threshold"
+    g8_still_threshold:
+      name: "Gate 8 Still Threshold"
+    g9_still_threshold:
+      name: "Gate 9 Still Threshold"
+    g10_still_threshold:
+      name: "Gate 10 Still Threshold"
+    g11_still_threshold:
+      name: "Gate 11 Still Threshold"
+    g12_still_threshold:
+      name: "Gate 12 Still Threshold"
+    g13_still_threshold:
+      name: "Gate 13 Still Threshold"
+    g14_still_threshold:
+      name: "Gate 14 Still Threshold"
+    g15_still_threshold:
+      name: "Gate 15 Still Threshold"
 
 button:
   - platform: ld2410d
