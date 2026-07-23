@@ -1,0 +1,108 @@
+# Example configuration for the HLK-LD2410D external component.
+#
+# Wiring (module -> ESP):
+#   VCC -> 5V
+#   GND -> GND
+#   TX  -> ESP RX (e.g. GPIO16)
+#   RX  -> ESP TX (e.g. GPIO17)
+#   OUT -> optional GPIO (module presence output, active high)
+#
+# The module talks 115200 baud, 8N1.
+
+esphome:
+  name: ld2410d-sensor
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+logger:
+  # The LD2410D sends ASCII lines in normal mode; keep the UART logger off this port.
+  baud_rate: 0
+
+# Pull the component in from this repository.
+external_components:
+  - source:
+      type: local
+      path: components
+    components: [ld2410d]
+
+uart:
+  id: uart_bus
+  tx_pin: GPIO17
+  rx_pin: GPIO16
+  baud_rate: 115200
+  parity: NONE
+  stop_bits: 1
+
+ld2410d:
+  id: radar
+  uart_id: uart_bus
+
+binary_sensor:
+  - platform: ld2410d
+    ld2410d_id: radar
+    has_target:
+      name: "Presence"
+    moving_target:
+      name: "Moving Target"
+    still_target:
+      name: "Still Target"
+
+sensor:
+  - platform: ld2410d
+    ld2410d_id: radar
+    detection_distance:
+      name: "Detection Distance"
+    # Per-gate energies are only populated in engineering mode.
+    g0_move_energy:
+      name: "Gate 0 Move Energy"
+    g1_move_energy:
+      name: "Gate 1 Move Energy"
+    g0_still_energy:
+      name: "Gate 0 Still Energy"
+    g1_still_energy:
+      name: "Gate 1 Still Energy"
+
+text_sensor:
+  - platform: ld2410d
+    ld2410d_id: radar
+    version:
+      name: "Firmware Version"
+    sn:
+      name: "Serial Number"
+
+number:
+  - platform: ld2410d
+    ld2410d_id: radar
+    max_distance:
+      name: "Max Distance"
+    timeout:
+      name: "Absence Timeout"
+    trigger_coefficient:
+      name: "Trigger Coefficient"
+    hold_coefficient:
+      name: "Hold Coefficient"
+    micro_coefficient:
+      name: "Micro Coefficient"
+    g0_move_threshold:
+      name: "Gate 0 Move Threshold"
+    g0_still_threshold:
+      name: "Gate 0 Still Threshold"
+
+button:
+  - platform: ld2410d
+    ld2410d_id: radar
+    query_params:
+      name: "Query Parameters"
+    generate_threshold:
+      name: "Generate Threshold"
+    auto_gain:
+      name: "Auto Gain"
+
+switch:
+  - platform: ld2410d
+    ld2410d_id: radar
+    engineering_mode:
+      name: "Engineering Mode"
